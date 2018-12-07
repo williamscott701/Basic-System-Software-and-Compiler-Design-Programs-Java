@@ -1,0 +1,5 @@
+Name	Value
+100c	ALPHA
+100f	FIVE
+1012	CHARZ
+1013	C1

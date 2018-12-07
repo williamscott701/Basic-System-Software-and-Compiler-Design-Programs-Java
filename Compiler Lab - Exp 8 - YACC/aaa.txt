@@ -1,0 +1,61 @@
+%{
+#include<ctype.h>
+#include<stdio.h>
+int i=0,s=1,ans=1;
+%}
+%token DIGIT
+%left '-''+'
+%right '*''/'
+%right '^'
+%%
+line:exp '\n'  {printf("%d\n",$1);}
+;
+exp:exp'+'exp {$$=$1+$3;}
+|exp'-'exp {$$=$1-$3;}
+|exp'*'exp {$$=$1*$3;}
+|exp'/'exp
+{
+if($3==0)
+printf("error");
+else
+{
+$$=$1/$3;
+}
+}
+|exp'^'exp {
+ans=1;
+i=0;
+for(i=0;i<$3;i++)
+ans=ans*$1;
+$$=ans;
+}
+|'('exp')' {$$=$2;}
+|DIGIT {$$=$1;}
+;
+%%
+yylex() {
+     int  c;
+
+     c=getchar();
+
+     if(  isdigit(  c  )  )  {
+          yylval  =  c  -  '0';
+          return(  DIGIT  );
+  }
+
+     return(  c  );
+
+ }
+main()
+{
+printf("Enter the Expr. in terms of integers\n");
+
+yyparse();
+printf("Success\n");
+}
+ yywrap() {
+return 0;
+}
+yyerror()
+{
+}

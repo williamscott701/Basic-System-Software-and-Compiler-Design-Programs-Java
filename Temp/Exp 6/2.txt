@@ -1,0 +1,8 @@
+E TD
+D +DE
+D ~
+T FP
+P *FP
+P ~
+F (E)
+F a

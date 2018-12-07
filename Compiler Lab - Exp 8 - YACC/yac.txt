@@ -1,0 +1,37 @@
+%{
+#include<stdio.h>
+int n=0,v=0;
+%}
+%token a b c
+%%
+S:A c B'\n' {if(n==v) printf("belong"); else yyerror("not belong");}
+        | error '\n' {yyerror("not belong");}
+        ;
+A: a A {n++;}
+|
+;
+B:b B {v++;}
+|
+;
+%%
+main()
+{
+printf("enter");
+yyparse();
+}
+yyerror(char *s)
+{
+printf("%s",s);
+}
+yylex()
+{
+char ch;
+while((ch=getchar())==' ');
+if (ch=='a')
+return a;
+if (ch=='b')
+return b;
+if (ch=='c')
+return c;
+return ch;
+}

@@ -1,0 +1,5 @@
+S AcB
+A aA
+A ~
+B bBS
+B ~

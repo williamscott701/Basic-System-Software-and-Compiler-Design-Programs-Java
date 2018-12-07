@@ -1,0 +1,10 @@
+
+#include<iostrem.h>
+#include<stdio.h>
+
+void main ()
+{
+	cout<<3.14;
+	cout<<5;
+	cout<<"Hello";
+}

@@ -1,0 +1,10 @@
+E TQ
+Q +TQ
+Q -TQ
+Q ~
+T FR
+R *FR
+R /FR
+R ~
+F (E)
+F a

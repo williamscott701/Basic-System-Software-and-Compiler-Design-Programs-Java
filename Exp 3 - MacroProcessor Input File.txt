@@ -1,0 +1,13 @@
+#include<iostrem.h>
+#include<stdio.h>
+
+#define pi 3.14;
+#define px 5;
+#define add() {cout<<"Hello";}
+
+void main ()
+{
+	cout<<pi;
+	cout<<px;
+	add();
+}
